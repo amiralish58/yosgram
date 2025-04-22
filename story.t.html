@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+  <meta charset="UTF-8">
+  <title>استوری‌های تعاملی</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;700&display=swap');
+
+    body {
+      font-family: "Vazirmatn", sans-serif;
+      background: linear-gradient(135deg, #d2e3ff, #f5f9ff);
+      margin: 0;
+      padding: 0;
+      direction: rtl;
+      overflow-x: hidden;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 40px auto;
+      background: rgba(255, 255, 255, 0.25);
+      backdrop-filter: blur(12px);
+      border-radius: 25px;
+      padding: 40px 30px;
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
+    }
+
+    h2 {
+      text-align: center;
+      font-size: 28px;
+      margin-bottom: 30px;
+      background: linear-gradient(to left, #007bff, #6c63ff);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .notice {
+      background: linear-gradient(135deg, #eef5ff, #ffffff);
+      border-right: 5px solid #6c63ff;
+      padding: 18px;
+      border-radius: 14px;
+      font-size: 15px;
+      box-shadow: 0 0 12px rgba(108, 99, 255, 0.1);
+      margin-bottom: 40px;
+    }
+
+    .story-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 25px;
+    }
+
+    .story-card {
+      background: rgba(255, 255, 255, 0.6);
+      backdrop-filter: blur(10px);
+      border-radius: 20px;
+      padding: 20px;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      animation: fadeIn 0.7s ease;
+    }
+
+    .story-card:hover {
+      transform: scale(1.03);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.12);
+    }
+
+    .story-card img {
+      width: 100%;
+      border-radius: 14px;
+      margin-top: 15px;
+    }
+
+    footer {
+      text-align: center;
+      font-size: 13px;
+      color: #888;
+      margin-top: 60px;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h2>استوری‌های تعاملی امروز 💬</h2>
+
+    <div class="notice">
+      دوست عزیز، فقط امروز به این استوری‌ها دسترسی داری. بعد از چند روز استفاده، ۲ روز استراحت داری ✌️
+    </div>
+
+    <div class="story-grid">
+
+      <div class="story-card">
+        <div>نظرت در مورد این محصول چیه؟ (از فالوورات بپرس!)</div>
+        <img src="story1.jpg" alt="استوری تعاملی ۱">
+      </div>
+
+      <div class="story-card">
+        <div>بین این دو گزینه کدومو ترجیح میدی؟ 🤔</div>
+        <img src="story2.jpg" alt="استوری تعاملی ۲">
+      </div>
+
+      <div class="story-card">
+        <div>اگه جای تو بودن، چیکار می‌کردن؟ 😯</div>
+        <img src="story3.jpg" alt="استوری تعاملی ۳">
+      </div>
+
+      <div class="story-card">
+        <div>یه جمله جای خالی بذار و بپرس: فالوورات چی می‌نویسن؟ ✍️</div>
+        <img src="story4.jpg" alt="استوری تعاملی ۴">
+      </div>
+
+    </div>
+
+    <footer>© 2025 یوزگرام - همه حقوق محفوظ است</footer>
+  </div>
+
+</body>
+</html>
