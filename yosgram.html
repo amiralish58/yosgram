@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+  <meta charset="UTF-8">
+  <title>یوگرام</title>
+  <style>
+    body {
+      font-family: 'Vazir', sans-serif;
+      background: linear-gradient(135deg, #e9f0ff, #f9fbff);
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: start;
+      min-height: 100vh;
+    }
+
+    .container {
+      background: #ffffff;
+      padding: 40px 25px 60px;
+      border-radius: 24px;
+      box-shadow: 0 20px 50px rgba(0, 85, 255, 0.1);
+      width: 100%;
+      max-width: 400px;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* subtle background shape */
+    .container::before {
+      content: '';
+      position: absolute;
+      top: -60px;
+      left: -60px;
+      width: 200px;
+      height: 200px;
+      background: radial-gradient(circle, #dce9ff 0%, transparent 80%);
+      z-index: 0;
+    }
+
+    .buttons {
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+      z-index: 1;
+    }
+
+    .blue-btn {
+      background: linear-gradient(135deg, #007bff, #0056b3);
+      color: white;
+      border: none;
+      padding: 16px 18px;
+      border-radius: 14px;
+      font-size: 17px;
+      font-weight: bold;
+      width: 100%;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: 0 6px 20px rgba(0, 123, 255, 0.25);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .blue-btn::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: -100%;
+      width: 100%;
+      height: 100%;
+      background: rgba(255,255,255,0.1);
+      transform: skewX(-20deg);
+      transition: right 0.4s ease;
+    }
+
+    .blue-btn:hover::after {
+      right: 100%;
+    }
+
+    .blue-btn:hover {
+      background: linear-gradient(135deg, #0066d6, #004ba0);
+      box-shadow: 0 8px 30px rgba(0, 85, 255, 0.35);
+    }
+
+    .footer {
+      text-align: center;
+      font-size: 14px;
+      color: #888;
+      margin-top: 40px;
+      z-index: 1;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <div class="buttons">
+      <button class="blue-btn">درباره یوزگرام</button>
+      <button class="blue-btn">سوالات متداول</button>
+      <button class="blue-btn">آموزش کار با یوزگرام</button>
+      <button class="blue-btn">مشاوره رایگان</button>
+      <button class="blue-btn">قوانین و مقررات</button>
+      <button class="blue-btn">ضمانت نامه</button>
+    </div>
+
+    <div class="footer">
+      © 2025 یوزگرام - تمام حقوق محفوظ است
+    </div>
+  </div>
+
+</body>
+</html>
