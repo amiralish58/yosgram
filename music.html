@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+  <meta charset="UTF-8">
+  <title>انتخاب موزیک احساسی</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;700&display=swap');
+
+    body {
+      font-family: 'Vazirmatn', sans-serif;
+      background: linear-gradient(135deg, #e0f7ff, #ffffff);
+      margin: 0;
+      padding: 0;
+      direction: rtl;
+      overflow-x: hidden;
+    }
+
+    .container {
+      max-width: 700px;
+      margin: 40px auto;
+      background: rgba(255, 255, 255, 0.5);
+      backdrop-filter: blur(10px);
+      border-radius: 20px;
+      padding: 40px 30px;
+      box-shadow: 0 12px 25px rgba(0, 0, 0, 0.1);
+      animation: fadeIn 1s ease;
+    }
+
+    h2 {
+      text-align: center;
+      font-size: 26px;
+      margin-bottom: 30px;
+      background: linear-gradient(to left, #00c9ff, #92fe9d);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    select {
+      width: 100%;
+      padding: 14px;
+      font-size: 16px;
+      border: none;
+      border-radius: 12px;
+      box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+      margin-bottom: 30px;
+      background-color: #f0f4ff;
+      transition: all 0.3s ease;
+    }
+
+    .music-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+    }
+
+    .music-item {
+      background: rgba(255, 255, 255, 0.7);
+      border-radius: 18px;
+      padding: 20px;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+      backdrop-filter: blur(5px);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      animation: popIn 0.5s ease forwards;
+    }
+
+    .music-item strong {
+      font-size: 16px;
+      margin-bottom: 10px;
+      color: #333;
+    }
+
+    .music-item audio {
+      width: 100%;
+      border-radius: 10px;
+    }
+
+    footer {
+      text-align: center;
+      font-size: 13px;
+      color: #888;
+      margin-top: 50px;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes popIn {
+      0% { transform: scale(0.95); opacity: 0; }
+      100% { transform: scale(1); opacity: 1; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h2>🎵 انتخاب موزیک متناسب با حس ویدیو</h2>
+
+    <select id="moodSelect">
+      <option value="">-- حس ویدیو را انتخاب کن --</option>
+      <option value="motivational">💪 انگیزشی</option>
+      <option value="sad">💔 غمگین</option>
+      <option value="fun">😄 شاد / فان</option>
+      <option value="energetic">⚡ پرانرژی</option>
+    </select>
+
+    <div id="musicList" class="music-grid"></div>
+
+    <footer>© 2025 یوزگرام - همه حقوق محفوظ است</footer>
+  </div>
+
+  <script>
+    const musicData = {
+      motivational: [
+        { title: "Motivation Track 1", src: "audio/motivation1.mp3" },
+        { title: "Motivation Track 2", src: "audio/motivation2.mp3" }
+      ],
+      sad: [
+        { title: "Sad Track 1", src: "audio/sad1.mp3" },
+        { title: "Sad Track 2", src: "audio/sad2.mp3" }
+      ],
+      fun: [
+        { title: "Fun Track 1", src: "audio/fun1.mp3" },
+        { title: "Fun Track 2", src: "audio/fun2.mp3" }
+      ],
+      energetic: [
+        { title: "Energetic Track 1", src: "audio/energy1.mp3" },
+        { title: "Energetic Track 2", src: "audio/energy2.mp3" }
+      ]
+    };
+
+    const moodSelect = document.getElementById("moodSelect");
+    const musicList = document.getElementById("musicList");
+
+    moodSelect.addEventListener("change", () => {
+      const mood = moodSelect.value;
+      musicList.innerHTML = "";
+
+      if (musicData[mood]) {
+        musicData[mood].forEach((music, index) => {
+          const item = document.createElement("div");
+          item.className = "music-item";
+          item.style.animationDelay = `${index * 0.1}s`;
+          item.innerHTML = `<strong>${music.title}</strong><audio controls src="${music.src}"></audio>`;
+          musicList.appendChild(item);
+        });
+      }
+    });
+  </script>
+
+</body>
+</html>
