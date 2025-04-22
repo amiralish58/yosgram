@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+  <meta charset="UTF-8">
+  <title>کلمات جادویی</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@700&display=swap');
+
+    body {
+      font-family: 'Vazirmatn', sans-serif;
+      background: linear-gradient(120deg, #2e2e47, #3d3d5c, #4e4e6e);
+      margin: 0;
+      padding: 0;
+      direction: rtl;
+      color: #fff;
+    }
+    
+    .container {
+      max-width: 500px;
+      margin: 0 auto;
+      background: linear-gradient(to bottom right, #ffffff, #f4f6ff); /* پس‌زمینه لطیف و خاص */
+      border: 2px solid #d0d9ff; /* حاشیه‌ی خیلی ملایم با رنگ خاص */
+      border-radius: 20px;
+      min-height: 100vh;
+      padding: 30px 20px;
+      box-shadow: 0 15px 35px rgba(0, 123, 255, 0.15); /* نور جادویی آبی کمرنگ */
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    
+
+    h2 {
+      text-align: center;
+      margin-bottom: 30px;
+      font-size: 22px;
+      color: #4c0082;
+    }
+
+    .magic-word {
+      text-align: center;
+      font-size: 28px;
+      font-weight: bold;
+      color: #ffffff;
+      padding: 20px;
+      border-radius: 15px;
+      margin-bottom: 20px;
+      background: linear-gradient(135deg, #8e44ad, #3498db); /* گرادینت جادویی */
+      box-shadow: 0 8px 20px rgba(52, 152, 219, 0.3); /* افکت نور نرم */
+      transition: all 0.3s ease;
+    }
+    
+
+    @keyframes shine {
+      0% { background-position: 0% center; }
+      100% { background-position: 200% center; }
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: scale(0.9); }
+      to { opacity: 1; transform: scale(1); }
+    }
+
+    .note {
+      text-align: center;
+      font-size: 15px;
+      color: #444;
+      margin-bottom: 20px;
+    }
+
+    footer {
+      text-align: center;
+      font-size: 14px;
+      margin-top: 40px;
+      color: #aaa;
+    }
+
+    
+
+    @keyframes moveStars {
+      from { background-position: 0 0; }
+      to { background-position: -10000px 5000px; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="stars"></div>
+
+  <div class="container">
+    <div>
+      <h2>✨ کلمه جادویی امروز شما ✨</h2>
+      <div class="magic-word" id="magicWord">...</div>
+      <div class="note">از این کلمه الهام بگیر و محتوای امروزت رو بساز 💡</div>
+    </div>
+
+    <footer>© 2025 یوزگرام - تمام حقوق محفوظ است</footer>
+  </div>
+
+  <script>
+    const magicWords = [
+      "اعتماد", "تحول", "فرصت", "قدرت", "نترس",
+      "رهایی", "ترکیب", "خلاقیت", "تغییر", "هیجان",
+      "جرأت", "آغاز", "پیروزی", "حرکت", "تمرکز",
+      "الهام", "داستان", "فکر بزرگ", "غافلگیری"
+    ];
+    const today = new Date();
+    const index = today.getDate() % magicWords.length;
+    document.getElementById("magicWord").innerText = magicWords[index];
+  </script>
+
+</body>
+</html>
