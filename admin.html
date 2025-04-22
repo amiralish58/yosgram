@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+  <meta charset="UTF-8">
+  <title>فضای ادمین</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Vazirmatn&display=swap');
+
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Vazirmatn', sans-serif;
+      background: linear-gradient(135deg, #fceabb, #f8b500, #ff8c00);
+      background-size: 400% 400%;
+      animation: gradientShift 10s ease infinite;
+    }
+
+    @keyframes gradientShift {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    .admin-container {
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .glass-box {
+      background: rgba(255, 255, 255, 0.2);
+      border-radius: 16px;
+      padding: 2rem 3rem;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.25);
+      backdrop-filter: blur(10px);
+      text-align: center;
+      color: #fff;
+      max-width: 500px;
+      width: 90%;
+    }
+
+    .glass-box h1 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+
+    .glass-box p {
+      font-size: 1.1rem;
+      line-height: 1.8;
+    }
+
+    .admin-btn {
+      margin-top: 1.5rem;
+      padding: 0.8rem 2rem;
+      background: #fff;
+      color: #ff6600;
+      border: none;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: 0.3s;
+      display: inline-block;
+      font-size: 1rem;
+    }
+
+    .admin-btn:hover {
+      background: #ff6600;
+      color: #fff;
+    }
+  </style>
+</head>
+<body>
+  <div class="admin-container">
+    <div class="glass-box">
+      <h1>🔥 اینجا قلمروی ادمین‌های واقعیه!</h1>
+      <p>جایی که پروژه‌ها کنترل می‌شن، تیم‌ها شکل می‌گیرن و مسیرها تغییر می‌کنن.</p>
+      <a href="#" class="admin-btn">ورود به داشبورد</a>
+    </div>
+  </div>
+</body>
+</html>
