@@ -188,14 +188,20 @@
       border-radius: 12px;
     }
 
-    @media (max-width: 500px) {
-      .container {
-        transform: scale(0.95);
-        transform-origin: top center;
-        width: 100%;
+    @media (max-width: 900px) {
+      .service-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      nav a {
+        flex: 1 1 48%;
       }
     }
 
+    @media (max-width: 500px) {
+      .service-grid {
+        grid-template-columns: 1fr;
+      }
       nav {
         flex-direction: column;
         align-items: center;
