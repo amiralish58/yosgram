@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+  <meta charset="UTF-8">
+  <title>اکسپلور گردی</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Vazir', sans-serif;
+      direction: rtl;
+      background: linear-gradient(135deg, #4facfe, #00f2fe);
+      color: #fff;
+    }
+
+    .container {
+      max-width: 520px;
+      margin: 0 auto;
+      padding: 30px 20px;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      backdrop-filter: blur(5px);
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 25px;
+      font-size: 26px;
+      color: #ffffff;
+    }
+
+    .video-box {
+      background: rgba(255, 255, 255, 0.08);
+      border-radius: 18px;
+      padding: 20px;
+      margin-bottom: 20px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+      backdrop-filter: blur(10px);
+    }
+
+    .video-box video {
+      width: 100%;
+      border-radius: 12px;
+      margin-bottom: 15px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    }
+
+    .info {
+      font-size: 15px;
+      line-height: 2;
+      color: #f0faff;
+    }
+
+    .info strong {
+      color: #ffffff;
+    }
+
+    .expired-message {
+      display: none;
+      color: #ffaaaa;
+      text-align: center;
+      font-size: 16px;
+      margin-top: 20px;
+    }
+
+    footer {
+      text-align: center;
+      font-size: 13px;
+      color: #d0eaff;
+      margin-top: 30px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <div>
+      <h2>🎯 اکسپلور گردی</h2>
+
+      <div class="video-box" id="exploreBox">
+        <video controls>
+          <source src="sample.mp4" type="video/mp4">
+          ویدیوی شما پشتیبانی نمی‌شود.
+        </video>
+        <div class="info">
+          <strong>نکته:</strong> استفاده از ترنزیشن ناگهانی برای جذب نگاه.<br>
+          <strong>تکنیک:</strong> استفاده از هشتگ کم رقابت همراه با لوکیشن برای ویدیوهای اول.<br>
+          <strong>سوال:</strong> چه زمان‌هایی برای شما بیشترین ایمپرشن رو آورده؟  
+        </div>
+      </div>
+
+      <div class="expired-message" id="expiredMsg">⏳ زمان مشاهده این ویدیو تمام شده است.</div>
+    </div>
+
+    <footer>© 2025 یوزگرام - تمام حقوق محفوظ است</footer>
+  </div>
+
+  <script>
+    // محدودیت ۲۴ ساعته ویدیو
+    const uploadedAt = new Date("2025-04-20T12:00:00");
+    const now = new Date();
+    const hoursPassed = (now - uploadedAt) / (1000 * 60 * 60);
+
+    if (hoursPassed > 24) {
+      document.getElementById("exploreBox").style.display = "none";
+      document.getElementById("expiredMsg").style.display = "block";
+    }
+  </script>
+
+</body>
+</html>
