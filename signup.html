@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>ثبت‌نام | یوزگرام</title>
+  <link href="https://fonts.googleapis.com/css2?family=Vazirmatn&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Vazirmatn', sans-serif;
+      background: #fafafa;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      color: #333;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 450px;
+      background: #fff;
+      padding: 2rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    header {
+      text-align: center;
+      font-size: 1.5rem;
+      color: #007bff;
+      margin-bottom: 1.5rem;
+    }
+
+    .form-group {
+      margin-bottom: 1rem;
+      text-align: right;
+    }
+
+    .form-group label {
+      font-size: 1rem;
+      margin-bottom: 0.5rem;
+      display: block;
+      color: #333;
+    }
+
+    .form-group input {
+      width: 100%;
+      padding: 0.8rem;
+      font-size: 1rem;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      margin-bottom: 0.8rem;
+      box-sizing: border-box;
+      direction: rtl;
+    }
+
+    .form-group input[type="submit"] {
+      background-color: #007bff;
+      color: #fff;
+      border: none;
+      cursor: pointer;
+    }
+
+    .form-group input[type="submit"]:hover {
+      background-color: #0056b3;
+    }
+
+    .form-group input:focus {
+      outline: none;
+      border-color: #007bff;
+    }
+
+    .password-link {
+      text-align: center;
+      margin-top: 10px;
+    }
+
+    .password-link a {
+      text-decoration: none;
+      color: #007bff;
+      font-size: 0.9rem;
+    }
+
+    .password-link a:hover {
+      text-decoration: underline;
+    }
+  </style>
+  <script>
+    function validateForm(e) {
+      const name = document.getElementById('name').value;
+      const phone = document.getElementById('phone').value;
+
+      const isFarsi = /^[؀-ۿ\s]+$/.test(name);
+      const isValidPhone = /^09\d{9}$/.test(phone);
+
+      if (!isFarsi) {
+        alert('لطفاً نام را به فارسی وارد کنید.');
+        e.preventDefault();
+        return false;
+      }
+
+      if (!isValidPhone) {
+        alert('شماره تماس باید 11 رقم و با 09 شروع شود.');
+        e.preventDefault();
+        return false;
+      }
+
+      window.location.href = "otp.html";
+      e.preventDefault();
+    }
+  </script>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>ثبت‌نام در یوزگرام</h1>
+    </header>
+    <form onsubmit="validateForm(event)">
+      <div class="form-group">
+        <label for="name">نام</label>
+        <input type="text" id="name" name="name" placeholder="نام فارسی">
+      </div>
+      <div class="form-group">
+        <label for="phone">شماره تماس</label>
+        <input type="text" id="phone" name="phone" placeholder="0913*******">
+      </div>
+      <div class="form-group">
+        <input type="submit" value="ثبت‌نام">
+      </div>
+    </form>
+
+    <div class="password-link">
+      <a href="pasword.html">رمز عبور؟</a>
+    </div>
+  </div>
+</body>
+</html>
