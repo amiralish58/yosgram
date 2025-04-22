@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <title>دنیای ایده</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Vazirmatn&display=swap');
+
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: "Vazirmatn", sans-serif;
+      background: linear-gradient(135deg, #0056b3, #007bff, #00c6ff);
+      background-size: 400% 400%;
+      animation: gradientBG 10s ease infinite;
+    }
+
+    @keyframes gradientBG {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    .container {
+      background: rgba(255, 255, 255, 0.95);
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+      border-radius: 20px;
+      max-width: 720px;
+      margin: 40px auto;
+      min-height: 80vh;
+      padding: 40px 25px 80px;
+      box-sizing: border-box;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      animation: fadeIn 1.5s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 25px;
+      font-size: 28px;
+      background: linear-gradient(45deg, #007bff, #00c6ff);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: floatText 3s infinite ease-in-out;
+    }
+
+    @keyframes floatText {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-5px); }
+    }
+
+    p {
+      font-size: 17px;
+      line-height: 2;
+      margin-bottom: 30px;
+      text-align: justify;
+      color: #333;
+    }
+
+    .btn {
+      background: linear-gradient(135deg, #007bff, #00c6ff);
+      color: white;
+      border: none;
+      padding: 15px;
+      border-radius: 16px;
+      font-size: 18px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: 0 8px 15px rgba(0, 123, 255, 0.3);
+    }
+
+    .btn:hover {
+      background: #0056b3;
+      transform: scale(1.05);
+    }
+
+    .message {
+      margin-top: 20px;
+      font-size: 16px;
+      color: #d9534f;
+      text-align: center;
+      animation: fadeInMessage 1s ease-in-out;
+    }
+
+    @keyframes fadeInMessage {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .footer {
+      text-align: center;
+      margin-top: auto;
+      color: #444;
+      font-size: 14px;
+      padding-top: 40px;
+      opacity: 0.7;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>دنیای ایده 🎬</h2>
+    <p>
+      دوست عزیز، برای رشد قطعی پیج شما فقط به صورت برنامه‌ریزی شده، هر ۴۸ ساعت یک ایده مرتبط با حوزه کاری خودتون دریافت می‌کنید.
+    </p>
+    <button class="btn" onclick="getIdea()">🚀 دریافت ایده امروز</button>
+    <div class="message" id="message"></div>
+    <div class="footer">© 2025 یوزگرام - تمام حقوق محفوظ است</div>
+  </div>
+
+  <script>
+    function getIdea() {
+      const lastTime = localStorage.getItem("lastIdeaTime");
+      const now = new Date().getTime();
+
+      const message = document.getElementById("message");
+
+      if (lastTime && now - lastTime < 48 * 60 * 60 * 1000) {
+        const remainHours = Math.ceil((48 * 60 * 60 * 1000 - (now - lastTime)) / (1000 * 60 * 60));
+        message.innerText = `⏳ لطفاً ${remainHours} ساعت دیگه برای دریافت ایده جدید صبر کن 🙏`;
+      } else {
+        localStorage.setItem("lastIdeaTime", now);
+        message.innerText = "🎉 ایده امروز با موفقیت برایت فعال شد! برو بسازش!";
+      }
+    }
+  </script>
+</body>
+</html>
