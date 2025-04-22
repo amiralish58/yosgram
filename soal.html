@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+  <meta charset="UTF-8">
+  <title>سوالات شما</title>
+  <style>
+    body {
+      font-family: 'Vazir', sans-serif;
+      background: linear-gradient(to right, #e0f7fa, #fce4ec); /* بک‌گراند ملایم و شاد */
+      direction: rtl;
+      margin: 0;
+      padding: 0;
+    }
+
+    .container {
+      max-width: 500px;
+      margin: 40px auto;
+      background: white;
+      border-radius: 20px;
+      padding: 40px 25px;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 25px;
+      font-size: 24px;
+      color: #007bff;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    input[type="text"], input[type="tel"] {
+      padding: 14px;
+      border: none;
+      border-radius: 12px;
+      background-color: #f1f3f5;
+      font-size: 16px;
+      transition: 0.3s;
+    }
+
+    input[type="text"]:focus, input[type="tel"]:focus {
+      outline: none;
+      box-shadow: 0 0 8px #80d8ff;
+      background-color: #ffffff;
+    }
+
+    button {
+      background: linear-gradient(45deg, #00c853, #00b0ff);
+      color: white;
+      padding: 15px;
+      border: none;
+      border-radius: 12px;
+      font-size: 16px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    button:hover {
+      filter: brightness(1.1);
+      transform: scale(1.03);
+    }
+
+    .success-message {
+      display: none;
+      color: #388e3c;
+      background-color: #e8f5e9;
+      padding: 12px;
+      border-radius: 10px;
+      text-align: center;
+      font-weight: bold;
+      margin-top: 10px;
+    }
+
+    footer {
+      text-align: center;
+      font-size: 13px;
+      margin-top: 30px;
+      color: #888;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <div>
+      <h2>📩 سوالات شما</h2>
+      <form id="questionForm">
+        <input type="text" placeholder="نام شما" id="name" required>
+        <input type="tel" placeholder="شماره تماس" id="phone" required>
+        <button type="submit">درخواست مشاوره رایگان</button>
+        <div class="success-message" id="successMessage">درخواست شما با موفقیت ثبت شد ✔</div>
+      </form>
+    </div>
+
+    <footer>© 2025 یوزگرام - تمام حقوق محفوظ است</footer>
+  </div>
+
+  <script>
+    const form = document.getElementById("questionForm");
+    const success = document.getElementById("successMessage");
+
+    form.addEventListener("submit", function(e) {
+      e.preventDefault();
+      success.style.display = "block";
+      form.reset();
+    });
+  </script>
+
+</body>
+</html>
