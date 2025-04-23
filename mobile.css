@@ -1,0 +1,20 @@
+body {
+    background-color: #fefefe;
+  }
+  
+  nav a {
+    font-size: 0.95rem;
+    padding: 0.8rem 0;
+  }
+  
+  /* مثال: نمایش آیتم‌ها در یک ستون */
+  .service-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  
+  /* تغییر در اسلایدر یا هر بخش دلخواه */
+  .slider-fade {
+    height: 300px;
+  }
