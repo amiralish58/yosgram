@@ -2,40 +2,9 @@
 <html lang="fa" dir="rtl">
 <head>
   <meta charset="UTF-8" />
-   <!-- داخل head این رو بذار -->
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>یوزگرام</title>
   <link href="https://fonts.googleapis.com/css2?family=Vazirmatn&display=swap" rel="stylesheet">
-
-  
-
-  
-<style>
-  * {
-    box-sizing: border-box;
-  }
-
-  body {
-    margin: 0;
-    padding: 0;
-    -webkit-text-size-adjust: 100%;
-    overflow-x: hidden;
-  }
-
-  img, video, iframe {
-    max-width: 100%;
-    height: auto;
-  }
-
-  .container, .wrapper, .content {
-    max-width: 100vw;
-    overflow-x: hidden;
-  }
-</style>
-
-
-
-
 
   <style>
     * {
@@ -44,11 +13,19 @@
 
     body {
       margin: 0;
+      padding: 0;
       font-family: 'Vazirmatn', sans-serif;
       background: #fafafa;
       color: #333;
       display: flex;
       justify-content: center;
+      -webkit-text-size-adjust: 100%;
+      overflow-x: hidden;
+    }
+
+    img, video, iframe {
+      max-width: 100%;
+      height: auto;
     }
 
     .container {
@@ -67,18 +44,16 @@
       text-align: center;
       color: white;
       border-radius: 20px;
-      font-size: 1.8rem; /* افزایش سایز فونت */
-      line-height: 0.6;   /* کنترل فاصله خطوط در صورت چند خطی بودن */
+      font-size: 1.8rem;
+      line-height: 1.2;
     }
-    
 
     nav {
       display: flex;
-      justify-content: space-between;
       flex-wrap: wrap;
-      margin-bottom: 1rem;
       gap: 0.7rem;
-      margin-top: 1.5rem;
+      margin: 1.5rem 0 1rem;
+      justify-content: center;
     }
 
     nav a {
@@ -98,20 +73,6 @@
     nav a:hover {
       background: #007bff;
       transform: scale(1.05);
-    }
-
-    .highlight-box {
-      background: #007bff;
-      color: white;
-      padding: 1.2rem;
-      border-radius: 1rem;
-      font-weight: bold;
-      font-size: 1.1rem;
-      text-align: center;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
-      margin: 2rem 0;
-      width: 100%;
-      height: 500px;
     }
 
     .service-grid {
@@ -134,7 +95,6 @@
       transition: 0.3s ease;
       cursor: pointer;
       color: #3c1e01;
-      transform: scale(1);
       text-align: center;
       position: relative;
     }
@@ -146,37 +106,12 @@
       position: absolute;
       top: 25%;
       transform: translateY(-50%);
-      margin-top: 35px; 
+      margin-top: 35px;
       border-radius: 50%;
     }
 
     .service-item:hover {
       transform: scale(1.05);
-      opacity: 1;
-    }
-
-    .slider-fade {
-      position: relative;
-      width: 100%;
-      height: 500px;
-      overflow: hidden;
-      border-radius: 1rem;
-      margin-top: 2rem;
-    }
-
-    .fade-slide {
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      opacity: 0;
-      transition: opacity 1s ease-in-out;
-      border-radius: 1rem;
-    }
-
-    .fade-slide.active {
-      opacity: 1;
-      z-index: 2;
     }
 
     .service-item:nth-child(1)  { background: #ff5c5c; }
@@ -203,9 +138,30 @@
       border-radius: 15%;
       width: 255px;
       height: 255px;
- 
-      
-       
+    }
+
+    .slider-fade {
+      position: relative;
+      width: 100%;
+      height: 500px;
+      overflow: hidden;
+      border-radius: 1rem;
+      margin-top: 2rem;
+    }
+
+    .fade-slide {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0;
+      transition: opacity 1s ease-in-out;
+      border-radius: 1rem;
+    }
+
+    .fade-slide.active {
+      opacity: 1;
+      z-index: 2;
     }
 
     footer {
@@ -217,19 +173,90 @@
     }
 
     @media (max-width: 900px) {
+      .container {
+        padding: 1rem;
+      }
+    
       .service-grid {
         grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
       }
-
+    
+      nav {
+        flex-wrap: wrap;
+        gap: 0.5rem;
+      }
+    
       nav a {
         flex: 1 1 48%;
+        font-size: 1rem;
+        padding: 0.9rem 0;
+      }
+    
+      .slider-fade {
+        height: 280px;
       }
     }
-
+    
     @media (max-width: 500px) {
+      .container {
+        padding: 0.5rem;
+      }
+    
+      header {
+        font-size: 1.4rem;
+        padding: 1rem 0.5rem;
+      }
+    
+      nav {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0.7rem;
+      }
+    
+      nav a {
+        width: 100%;
+        font-size: 1rem;
+        padding: 1rem;
+      }
+    
       .service-grid {
         grid-template-columns: 1fr;
+        gap: 0.8rem;
       }
+    
+      .service-item {
+        font-size: 1rem;
+        padding: 1.2rem 0.5rem 1rem;
+        aspect-ratio: auto;
+        min-height: 220px;
+        word-break: break-word;
+      }
+    
+      .service-item img {
+        width: 100px;
+        height: 100px;
+        margin-top: 30px;
+      }
+    
+      .slider-fade {
+        height: 220px;
+      }
+    
+      button {
+        width: 100%;
+        font-size: 1rem;
+        padding: 1rem;
+        margin-top: 1rem;
+      }
+    
+      footer {
+        font-size: 0.9rem;
+        padding: 1rem 0.5rem;
+      }
+    }
+    
+
       nav {
         flex-direction: column;
         align-items: center;
@@ -239,52 +266,65 @@
         width: 100%;
       }
 
-      .highlight-box {
-        width: 100%;
+      .slider-fade {
+        height: 240px;
       }
-    }
+
+      .service-item img {
+        width: 120px;
+        height: 120px;
+      }
+
+      .service-item {
+        font-size: 1rem;
+        padding-bottom: 1.5rem;
+      }
+
+      header {
+        font-size: 1.5rem;
+      }
+    
   </style>
 </head>
 <body>
 
-  <div class="container">
+  <div class="container" style="width: 100%; max-width: 1100px;">
+
     <header>
       <h1>دیده بشی، بردی!</h1>
     </header>
 
-    <!-- دکمه های اصلی -->
-<nav>
-  <a href="signup.html">ثبت‌نام</a>
-  <a href="singin.html">ورود</a>
-  <a href="shop.html">خرید اشتراک</a>
-  <a href="panel.html">پنل من</a>
-</nav>
+    <nav>
+      <a href="signup.html">ثبت‌نام</a>
+      <a href="singin.html">ورود</a>
+      <a href="shop.html">خرید اشتراک</a>
+      <a href="panel.html">پنل من</a>
+    </nav>
 
-<div class="service-grid">
-  <a href="cover.html" class="service-item"><img src="کاور ساز.png" alt=""><span>کاور ساز</span></a>
-  <a href="donyaideh.html" class="service-item"><img src="دنیای ایده.png" alt=""><span>دنیای ایده</span></a>
-  <a href="mobailgrafi.html" class="service-item"><img src="ویدیو گرافی.png" alt=""><span>موبایل گرافی</span></a>
-  <a href="gold.html" class="service-item"><img src="ویدیو طلایی.png" alt=""><span>ویدیو طلایی</span></a>
-  <a href="story.t.html" class="service-item"><img src="استوری تعاملی.png" alt=""><span>استوری تعاملی</span></a>
-  <a href="music.html" class="service-item"><img src="موزیک.png" alt=""><span>موزیک</span></a>
-  <a href="editors_arena/index.html" class="service-item"><img src="ادیت.png" alt=""><span>ادیت</span></a>
-  <a href="jado.html" class="service-item"><img src="کلمات جادویی.png" alt=""><span>کلمات جادویی</span></a>
-  <a href="soal.html" class="service-item"><img src="سولات شما.png" alt=""><span>سوالات شما</span></a>
-  <a href="explor.html" class="service-item"><img src="اکسپلور گردی.png" alt=""><span>اکسپلور گردی</span></a>
-  <a href="admin.html" class="service-item"><img src="ادمین.png" alt=""><span>ادمین</span></a>
-  <a href="poshtiban.html" class="service-item"><img src="پشتیببانی.png" alt=""><span>پشتیبانی</span></a>
-  <a href="markting.html" class="service-item"><img src="مارکتینگ.png" alt=""><span>مارکتینگ</span></a>
-  <a href="team.html" class="service-item"><img src="کار اختصاصی با تیم ما.png" alt=""><span>کار اختصاصی با تیم ما</span></a>
-  <a href="story2.html" class="service-item"><img src="استوری خلاقانه.png" alt=""><span>استوری خلاقانه</span></a>
-  <a href="yosgram.html" class="service-item no-img"><span>یوزگرام</span></span></a>
-
+    <div class="service-grid">
+      <a href="cover.html" class="service-item"><img src="images/کاور ساز.png" alt=""><span>کاور ساز</span></a>
+      <a href="donyaideh.html" class="service-item"><img src="images/دنیای ایده.png" alt=""><span>دنیای ایده</span></a>
+      <a href="mobailgrafi.html" class="service-item"><img src="images/ویدیو گرافی.png" alt=""><span>موبایل گرافی</span></a>
+      <a href="gold.html" class="service-item"><img src="images/ویدیو طلایی.png" alt=""><span>ویدیو طلایی</span></a>
+      <a href="story.t.html" class="service-item"><img src="images/استوری تعاملی.png" alt=""><span>استوری تعاملی</span></a>
+      <a href="music.html" class="service-item"><img src="images/موزیک.png" alt=""><span>موزیک</span></a>
+      <a href="editors_arena/index.html" class="service-item"><img src="images/ادیت.png" alt=""><span>ادیت</span></a>
+      <a href="jado.html" class="service-item"><img src="images/کلمات جادویی.png" alt=""><span>کلمات جادویی</span></a>
+      <a href="soal.html" class="service-item"><img src="images/سولات شما.png" alt=""><span>سوالات شما</span></a>
+      <a href="explor.html" class="service-item"><img src="images/اکسپلور گردی.png" alt=""><span>اکسپلور گردی</span></a>
+      <a href="admin.html" class="service-item"><img src="images/ادمین.png" alt=""><span>ادمین</span></a>
+      <a href="poshtiban.html" class="service-item"><img src="images/پشتیببانی.png" alt=""><span>پشتیبانی</span></a>
+      <a href="markting.html" class="service-item"><img src="images/مارکتینگ.png" alt=""><span>مارکتینگ</span></a>
+      <a href="team.html" class="service-item"><img src="images/کار اختصاصی با تیم ما.png" alt=""><span>کار اختصاصی با تیم ما</span></a>
+      <a href="story2.html" class="service-item"><img src="images/استوری خلاقانه.png" alt=""><span>استوری خلاقانه</span></a>
+      <a href="yosgram.html" class="service-item no-img"><span>یوزگرام</span></a>
     </div>
 
     <div class="slider-fade">
-      <img src="4.png" class="fade-slide active">
-      <img src="5.png" class="fade-slide">
-      <img src="6.png" class="fade-slide">
-      <img src="7.png" class="fade-slide">
+      <img src="images/4.png" class="fade-slide active">
+      <img src="images/5.png" class="fade-slide">
+      <img src="images/6.png" class="fade-slide">
+      <img src="images/7.png" class="fade-slide">
     </div>
 
     <div style="text-align: center; margin-top: 1rem;">
@@ -308,6 +348,14 @@
   </script>
 
 </body>
-<script src="script.js"></script>
-
 </html>
+
+
+ 
+
+    
+      
+   
+
+    
+    
