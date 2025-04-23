@@ -11,45 +11,33 @@
 
 
 
-<style>
-  * {
-    box-sizing: border-box;
-  }
-
-  body {
-    margin: 0;
-    padding: 0;
-    -webkit-text-size-adjust: 100%;
-    overflow-x: hidden;
-  }
-
-  img, video, iframe {
-    max-width: 100%;
-    height: auto;
-  }
-
-  .container, .wrapper, .content {
-    max-width: 100vw;
-    overflow-x: hidden;
-  }
-</style>
-
-  
-  
   <style>
     * {
       box-sizing: border-box;
     }
-
+  
     body {
       margin: 0;
+      padding: 0;
+      -webkit-text-size-adjust: 100%;
+      overflow-x: hidden;
       font-family: 'Vazirmatn', sans-serif;
       background: #fafafa;
       color: #333;
       display: flex;
       justify-content: center;
     }
-
+  
+    img, video, iframe {
+      max-width: 100%;
+      height: auto;
+    }
+  
+    .container, .wrapper, .content {
+      max-width: 100vw;
+      overflow-x: hidden;
+    }
+  
     .container {
       width: 1100px;
       max-width: 95%;
@@ -59,18 +47,17 @@
       border-radius: 20px;
       box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
     }
-
+  
     header {
       background: linear-gradient(90deg, #ff007d, #7a00ff);
       padding: 1rem;
       text-align: center;
       color: white;
       border-radius: 20px;
-      font-size: 1.8rem; /* افزایش سایز فونت */
-      line-height: 0.6;   /* کنترل فاصله خطوط در صورت چند خطی بودن */
+      font-size: 1.8rem;
+      line-height: 0.6;
     }
-    
-
+  
     nav {
       display: flex;
       justify-content: space-between;
@@ -79,7 +66,7 @@
       gap: 0.7rem;
       margin-top: 1.5rem;
     }
-
+  
     nav a {
       text-decoration: none;
       background: #4da6ff;
@@ -93,12 +80,12 @@
       transition: 0.3s ease;
       transform: scale(1);
     }
-
+  
     nav a:hover {
       background: #007bff;
       transform: scale(1.05);
     }
-
+  
     .highlight-box {
       background: #007bff;
       color: white;
@@ -112,14 +99,14 @@
       width: 100%;
       height: 500px;
     }
-
+  
     .service-grid {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
       gap: 1.2rem;
       margin-top: 2rem;
     }
-
+  
     .service-item {
       border-radius: 12px;
       padding: 2rem 1rem 1rem;
@@ -137,7 +124,7 @@
       text-align: center;
       position: relative;
     }
-
+  
     .service-item img {
       width: 180px;
       height: 180px;
@@ -145,15 +132,15 @@
       position: absolute;
       top: 25%;
       transform: translateY(-50%);
-      margin-top: 35px; 
+      margin-top: 35px;
       border-radius: 50%;
     }
-
+  
     .service-item:hover {
       transform: scale(1.05);
       opacity: 1;
     }
-
+  
     .slider-fade {
       position: relative;
       width: 100%;
@@ -162,7 +149,7 @@
       border-radius: 1rem;
       margin-top: 2rem;
     }
-
+  
     .fade-slide {
       position: absolute;
       width: 100%;
@@ -172,12 +159,12 @@
       transition: opacity 1s ease-in-out;
       border-radius: 1rem;
     }
-
+  
     .fade-slide.active {
       opacity: 1;
       z-index: 2;
     }
-
+  
     .service-item:nth-child(1)  { background: #ff5c5c; }
     .service-item:nth-child(2)  { background: #7eff98; }
     .service-item:nth-child(3)  { background: #70b9e6; }
@@ -193,6 +180,7 @@
     .service-item:nth-child(13) { background: #70b9e6; }
     .service-item:nth-child(14) { background: #ffda62; }
     .service-item:nth-child(15) { background: #ff66b3; }
+  
     .service-item:nth-child(16) {
       background-image: url('images/یوزگرام.png');
       background-size: cover;
@@ -202,11 +190,8 @@
       border-radius: 15%;
       width: 255px;
       height: 255px;
- 
-      
-       
     }
-
+  
     footer {
       background: #eee;
       text-align: center;
@@ -214,42 +199,33 @@
       margin-top: 2rem;
       border-radius: 12px;
     }
-
-
-
-    
-
+  
+    /* 🎯 فقط سایز کوچیک می‌شه، چینش دست نزن! */
     @media (max-width: 900px) {
-      .service-grid {
-        grid-template-columns: repeat(2, 1fr);
+      body {
+        transform: scale(0.9);
+        transform-origin: top left;
+        width: 111%;
       }
-
-      nav a {
-        flex: 1 1 48%;
+  
+      h1, p, a, span {
+        font-size: 14px;
       }
     }
-
+  
     @media (max-width: 500px) {
-      .service-grid {
-        grid-template-columns: 1fr;
+      body {
+        transform: scale(0.8);
+        transform-origin: top left;
+        width: 125%;
       }
-
-      
-
-      nav {
-        flex-direction: column;
-        align-items: center;
-      }
-
-      nav a {
-        width: 100%;
-      }
-
-      .highlight-box {
-        width: 100%;
+  
+      h1, p, a, span {
+        font-size: 13px;
       }
     }
   </style>
+  
 </head>
 <body>
 
@@ -318,3 +294,13 @@
 
 </html>
 
+
+  
+     
+     
+     
+    
+        
+
+
+  
