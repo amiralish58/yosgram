@@ -1,20 +1,92 @@
+/* فایل: mobile.css */
 body {
-    background-color: #fefefe;
-  }
-  
-  nav a {
-    font-size: 0.95rem;
-    padding: 0.8rem 0;
-  }
-  
-  /* مثال: نمایش آیتم‌ها در یک ستون */
-  .service-grid {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 1rem;
-  }
-  
-  /* تغییر در اسلایدر یا هر بخش دلخواه */
-  .slider-fade {
-    height: 300px;
-  }
+  margin: 0;
+  padding: 1rem;
+  font-family: 'Vazirmatn', sans-serif;
+  background: #fafafa;
+  color: #333;
+}
+
+.container {
+  width: 100%;
+  padding: 1rem 0.5rem;
+  margin: 1rem auto;
+  border-radius: 15px;
+  box-shadow: none;
+}
+
+/* هدر */
+header {
+  font-size: 1.4rem;
+  padding: 1rem;
+  border-radius: 1rem;
+}
+
+/* دکمه‌ها */
+nav {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.7rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+nav a {
+  font-size: 1rem;
+  padding: 0.7rem 0;
+}
+
+/* شبکه آیتم‌ها: ۲ ستونه برای موبایل */
+.service-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.7rem;
+  margin-top: 1rem;
+}
+
+/* آیتم خدمات */
+.service-item {
+  font-size: 0.9rem;
+  padding: 1rem 0.5rem;
+  aspect-ratio: 1/1;
+}
+
+.service-item img {
+  width: 90px;
+  height: 90px;
+  margin-top: 0;
+}
+
+/* آیتم آخر با بکگراند خاص */
+.service-item:nth-child(16) {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1/1;
+  border-radius: 15%;
+}
+
+/* بنر اسلایدر */
+.slider-fade {
+  height: 200px;
+  margin-top: 1.5rem;
+}
+
+.fade-slide {
+  height: 100%;
+  object-fit: contain; /* فقط تصویر کوچک بشه */
+  padding: 0.3rem;
+}
+
+/* دکمه بعدی */
+button {
+  margin-top: 1rem;
+  width: 100%;
+  font-size: 1rem;
+  padding: 0.7rem;
+}
+
+/* فوتر */
+footer {
+  margin-top: 2rem;
+  font-size: 0.9rem;
+}
