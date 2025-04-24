@@ -1,306 +1,154 @@
 <!DOCTYPE html>
 <html lang="fa" dir="rtl">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>یوزگرام</title>
-  <link href="https://fonts.googleapis.com/css2?family=Vazirmatn&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="mobile.1css" media="only screen and (max-width: 600px)">
- 
-
-
-
-
-
   <style>
-    * {
-      box-sizing: border-box;
-    }
-  
     body {
       margin: 0;
-      padding: 0;
-      -webkit-text-size-adjust: 100%;
-      overflow-x: hidden;
-      font-family: 'Vazirmatn', sans-serif;
-      background: #fafafa;
-      color: #333;
+      font-family: sans-serif;
+      background: linear-gradient(135deg, #ff3c6c, #7e00ff);
       display: flex;
       justify-content: center;
+      align-items: center;
+      height: 100vh;
     }
-  
-    img, video, iframe {
-      max-width: 100%;
-      height: auto;
-    }
-  
-    .container, .wrapper, .content {
-      max-width: 100vw;
-      overflow-x: hidden;
-    }
-  
+
     .container {
-      width: 1100px;
-      max-width: 95%;
-      background: #fff;
-      padding: 1rem;
-      margin: 2rem auto;
-      border-radius: 20px;
-      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-    }
-  
-    header {
-      background: linear-gradient(90deg, #ff007d, #7a00ff);
-      padding: 1rem;
-      text-align: center;
-      color: white;
-      border-radius: 20px;
-      font-size: 1.8rem;
-      line-height: 0.6;
-    }
-  
-    nav {
-      display: flex;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      margin-bottom: 1rem;
-      gap: 0.7rem;
-      margin-top: 1.5rem;
-    }
-  
-    nav a {
-      text-decoration: none;
-      background: #4da6ff;
-      color: white;
-      padding: 1rem 0;
-      border-radius: 1rem;
-      font-weight: bold;
-      font-size: 1.1rem;
-      flex: 1 1 24%;
-      text-align: center;
-      transition: 0.3s ease;
-      transform: scale(1);
-    }
-  
-    nav a:hover {
-      background: #007bff;
-      transform: scale(1.05);
-    }
-  
-    .highlight-box {
-      background: #007bff;
-      color: white;
-      padding: 1.2rem;
-      border-radius: 1rem;
-      font-weight: bold;
-      font-size: 1.1rem;
-      text-align: center;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
-      margin: 2rem 0;
-      width: 100%;
-      height: 500px;
-    }
-  
-    .service-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 1.2rem;
-      margin-top: 2rem;
-    }
-  
-    .service-item {
-      border-radius: 12px;
-      padding: 2rem 1rem 1rem;
-      font-weight: bold;
-      font-size: 1.2rem;
-      aspect-ratio: 1/1;
+      width: 360px;
+      height: 100vh;
+      background: linear-gradient(135deg, #ff3c6c, #7e00ff);
       display: flex;
       flex-direction: column;
-      align-items: center;
-      justify-content: flex-end;
-      transition: 0.3s ease;
-      cursor: pointer;
-      color: #3c1e01;
-      transform: scale(1);
-      text-align: center;
-      position: relative;
-    }
-  
-    .service-item img {
-      width: 180px;
-      height: 180px;
-      object-fit: contain;
-      position: absolute;
-      top: 25%;
-      transform: translateY(-50%);
-      margin-top: 35px;
-      border-radius: 50%;
-    }
-  
-    .service-item:hover {
-      transform: scale(1.05);
-      opacity: 1;
-    }
-  
-    .slider-fade {
-      position: relative;
-      width: 100%;
-      height: 500px;
+      justify-content: start;
       overflow: hidden;
-      border-radius: 1rem;
-      margin-top: 2rem;
+      box-shadow: 0 0 25px rgba(0, 0, 0, 0.2);
     }
-  
-    .fade-slide {
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      opacity: 0;
-      transition: opacity 1s ease-in-out;
-      border-radius: 1rem;
-    }
-  
-    .fade-slide.active {
-      opacity: 1;
-      z-index: 2;
-    }
-  
-    .service-item:nth-child(1)  { background: #ff5c5c; }
-    .service-item:nth-child(2)  { background: #7eff98; }
-    .service-item:nth-child(3)  { background: #70b9e6; }
-    .service-item:nth-child(4)  { background: #ffb447; }
-    .service-item:nth-child(5)  { background: #70b9e6; }
-    .service-item:nth-child(6)  { background: #ff66b3; }
-    .service-item:nth-child(7)  { background: #ffda62; }
-    .service-item:nth-child(8)  { background: #9e4eff; }
-    .service-item:nth-child(9)  { background: #80e0e6; }
-    .service-item:nth-child(10) { background: #ffb447; }
-    .service-item:nth-child(11) { background: #ff5c5c; }
-    .service-item:nth-child(12) { background: #7eff98; }
-    .service-item:nth-child(13) { background: #70b9e6; }
-    .service-item:nth-child(14) { background: #ffda62; }
-    .service-item:nth-child(15) { background: #ff66b3; }
-  
-    .service-item:nth-child(16) {
-      background-image: url('images/یوزگرام.png');
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
-      color: white;
-      border-radius: 15%;
-      width: 255px;
-      height: 255px;
-    }
-  
-    footer {
-      background: #eee;
+
+    .header {
+      background: linear-gradient(135deg, #ff3c6c, #7e00ff);
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
       text-align: center;
-      padding: 1rem;
-      margin-top: 2rem;
+      padding: 16px;
+      font-size: 22px;
+      font-weight: bold;
+      color: white;
+    }
+
+    .buttons {
+      display: flex;
+      justify-content: space-between;
+      padding: 16px 12px 0;
+      gap: 12px;
+    }
+
+    .button {
+      flex: 1;
+      padding: 12px 0;
+      border: none;
       border-radius: 12px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: transform 0.3s ease;
+      color: white;
     }
-  
-    /* 🎯 فقط سایز کوچیک می‌شه، چینش دست نزن! */
-    @media (max-width: 900px) {
-      body {
-        transform: scale(0.9);
-        transform-origin: top left;
-        width: 111%;
-      }
-  
-      h1, p, a, span {
-        font-size: 14px;
-      }
+
+    .button.login {
+      background-color: #2563eb;
     }
-  
-    @media (max-width: 500px) {
-      body {
-        transform: scale(0.8);
-        transform-origin: top left;
-        width: 125%;
-      }
-  
-      h1, p, a, span {
-        font-size: 13px;
-      }
+    .button.login:hover {
+      transform: scale(1.05);
+    }
+
+    .button.free {
+      background-color: #059669;
+    }
+    .button.free:hover {
+      transform: scale(1.05);
+    }
+
+    .icons {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 10px;
+      padding: 16px 12px 0; /* فاصله از بالا و کناره‌ها مثل دکمه‌ها */
+      box-sizing: border-box;
+    }
+
+    .icon {
+      width: 100%;
+      aspect-ratio: 1 / 1;
+      background-color: rgba(255, 255, 255, 0.1);
+      border-radius: 12px;
+      transition: transform 0.3s ease, background-color 0.3s ease;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      color: white;
+      font-size: 12px;
+      text-align: center;
+      padding: 4px;
+    }
+    .icon:hover {
+      transform: scale(1.1);
+      background-color: rgba(255, 255, 255, 0.2);
+    }
+
+    .icon img {
+      width: 30px;
+      height: 30px;
+      margin-bottom: 4px;
+    }
+
+    .footer {
+      text-align: center;
+      font-size: 12px;
+      padding: 12px;
+      color: white;
+      background-color: rgba(0, 0, 0, 0.1);
+      box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.2);
+      margin-top: auto; /* می‌چسبه به پایین */
     }
   </style>
-  
 </head>
 <body>
-
   <div class="container">
-    <header>
-      <h1>دیده بشی، بردی!</h1>
-    </header>
-
-    <!-- دکمه های اصلی -->
-<nav>
-  <a href="signup.html">ثبت‌نام</a>
-  <a href="singin.html">ورود</a>
-  <a href="shop.html">خرید اشتراک</a>
-  <a href="panel.html">پنل من</a>
-</nav>
-
-<div class="service-grid">
-  <a href="cover.html" class="service-item"><img src="images/کاور ساز.png" alt=""><span>کاور ساز</span></a>
-  <a href="donyaideh.html" class="service-item"><img src="images/دنیای ایده.png" alt=""><span>دنیای ایده</span></a>
-  <a href="mobailgrafi.html" class="service-item"><img src="images/ویدیو گرافی.png" alt=""><span>موبایل گرافی</span></a>
-  <a href="gold.html" class="service-item"><img src="images/ویدیو طلایی.png" alt=""><span>ویدیو طلایی</span></a>
-  <a href="story.t.html" class="service-item"><img src="images/استوری تعاملی.png" alt=""><span>استوری تعاملی</span></a>
-  <a href="music.html" class="service-item"><img src="images/موزیک.png" alt=""><span>موزیک</span></a>
-  <a href="editors_arena/index.html" class="service-item"><img src="images/ادیت.png" alt=""><span>ادیت</span></a>
-  <a href="jado.html" class="service-item"><img src="images/کلمات جادویی.png" alt=""><span>کلمات جادویی</span></a>
-  <a href="soal.html" class="service-item"><img src="images/سولات شما.png" alt=""><span>سوالات شما</span></a>
-  <a href="explor.html" class="service-item"><img src="images/اکسپلور گردی.png" alt=""><span>اکسپلور گردی</span></a>
-  <a href="admin.html" class="service-item"><img src="images/ادمین.png" alt=""><span>ادمین</span></a>
-  <a href="poshtiban.html" class="service-item"><img src="images/پشتیببانی.png" alt=""><span>پشتیبانی</span></a>
-  <a href="markting.html" class="service-item"><img src="images/مارکتینگ.png" alt=""><span>مارکتینگ</span></a>
-  <a href="team.html" class="service-item"><img src="images/کار اختصاصی با تیم ما.png" alt=""><span>کار اختصاصی با تیم ما</span></a>
-  <a href="story2.html" class="service-item"><img src="images/استوری خلاقانه.png" alt=""><span>استوری خلاقانه</span></a>
-  <a href="yosgram.html" class="service-item no-img"><span>یوزگرام</span></span></a>
-
+    <div class="header">دیده بشی بردی!</div>
+    <div class="buttons">
+      <button class="button free">شروع رایگان!</button>
+      <button class="button login">ثبت نام / ورود</button>
     </div>
-
-    <div class="slider-fade">
-      <img src="images/4.png" class="fade-slide active">
-      <img src="images/5.png" class="fade-slide">
-      <img src="images/6.png" class="fade-slide">
-      <img src="images/7.png" class="fade-slide">
+    <div class="icons">
+      <div class="icon"><img src="https://via.placeholder.com/30/ffffff/000000?text=AD"><span>تبلیغات</span></div>
+      <div class="icon"><img src="https://via.placeholder.com/30/ffffff/000000?text=SEO"><span>سئو</span></div>
+      <div class="icon"><img src="https://via.placeholder.com/30/ffffff/000000?text=SM"><span>شبکه‌های اجتماعی</span></div>
+      <div class="icon"><img src="https://via.placeholder.com/30/ffffff/000000?text=GD"><span>طراحی گرافیک</span></div>
+      <div class="icon"><img src="https://via.placeholder.com/30/ffffff/000000?text=DEV"><span>طراحی سایت</span></div>
+      <div class="icon"><img src="https://via.placeholder.com/30/ffffff/000000?text=APP"><span>اپلیکیشن موبایل</span></div>
+      <div class="icon"><img src="https://via.placeholder.com/30/ffffff/000000?text=AI"><span>هوش مصنوعی</span></div>
+      <div class="icon"><img src="https://via.placeholder.com/30/ffffff/000000?text=ML"><span>تحلیل داده</span></div>
+      <div class="icon"><img src="https://via.placeholder.com/30/ffffff/000000?text=UI"><span>طراحی UI/UX</span></div>
+      <div class="icon"><img src="https://via.placeholder.com/30/ffffff/000000?text=PR"><span>روابط عمومی</span></div>
+      <div class="icon"><img src="https://via.placeholder.com/30/ffffff/000000?text=PM"><span>مدیریت پروژه</span></div>
+      <div class="icon"><img src="https://via.placeholder.com/30/ffffff/000000?text=CRM"><span>مدیریت مشتری</span></div>
+      <div class="icon"><img src="https://via.placeholder.com/30/ffffff/000000?text=EMAIL"><span>ایمیل مارکتینگ</span></div>
+      <div class="icon"><img src="https://via.placeholder.com/30/ffffff/000000?text=SMS"><span>پیامک تبلیغاتی</span></div>
+      <div class="icon"><img src="https://via.placeholder.com/30/ffffff/000000?text=VIDEO"><span>ساخت ویدیو</span></div>
+      <div class="icon"><img src="https://via.placeholder.com/30/ffffff/000000?text=DOC"><span>محتوا نویسی</span></div>
     </div>
-
-    <div style="text-align: center; margin-top: 1rem;">
-      <button onclick="nextSlide()" style="padding: 0.8rem 1.5rem; font-size: 1rem; border-radius: 10px; background: #007bff; color: white; border: none; cursor: pointer;">بعدی</button>
-    </div>
-
-    <footer>
-      <p>© 2025 یوزگرام - تمام حقوق محفوظ است</p>
-    </footer>
+    <div class="footer">تمام حریم خصوصی متعلق به یوزگرام هست - 2025</div>
   </div>
-
-  <script>
-    const slides = document.querySelectorAll('.fade-slide');
-    let currentIndex = 0;
-
-    function nextSlide() {
-      slides[currentIndex].classList.remove('active');
-      currentIndex = (currentIndex + 1) % slides.length;
-      slides[currentIndex].classList.add('active');
-    }
-  </script>
-
 </body>
-<script src="script.js"></script>
-
 </html>
-
-
-  
-     
-     
+   
+    
      
     
+  
+
+   
         
 
 
